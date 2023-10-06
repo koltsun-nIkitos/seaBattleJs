@@ -154,7 +154,7 @@ const fire = (event) => {
                     header.textContent = 'Игра окончена!';
                     header.style.color = 'red';
 
-                    if (play.shot < play.record || play.record === 0){
+                    if (play.shot < play.record || play.record == 0){
                         localStorage.setItem('seaBattleRecord', play.shot);
                         play.record = play.shot;
                         play.render();
@@ -178,7 +178,7 @@ const init = () => {
     })
 
     record.addEventListener('dblclick', ()=>{
-        localStorage.clear();
+        localStorage.setItem('seaBattleRecord', 0);
         play.record = 0;
         play.render();
     })
